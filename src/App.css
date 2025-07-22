@@ -1,38 +1,468 @@
-.App {
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background-color: #fdfdfd;
+  color: #111;
+}
+
+body.dark {
+  background-color: #1f1f1f;
+  color: #eee;
+}
+
+.header {
+  padding: 2.5rem 2rem;
+  border-bottom: 2px solid #ddd;
+  background-color: inherit;
+}
+
+.navbar {
+  max-width: 1500px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 10rem;
+  max-width: 1000px;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: color 0.2s;
+  
+}
+
+.nav-links a:hover {
+  color: #0073e6;
+}
+
+.icons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.icons a,
+.icons button {
+  color: inherit;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  font-size: larger;
+}
+
+
+
+/* New layout for intro */
+.intro-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
   text-align: center;
+  flex-direction: column;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.intro-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: larger;
+}
+
+.intro-text {
+  margin-top: 1rem;
+}
+
+.plain-role {
+  font-size: 2.1rem;
+  font-weight: 500;
+  margin-top: 0.10rem;
+  padding-bottom: 50px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+
+/* Fix circular photo */
+.center-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.6rem;
+}
+
+/* Heading */
+.intro-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0.rem 0;
+}
+
+
+/* Resume button */
+.resume-button {
+  margin-top: 1.9rem;
+  padding: 1.2rem 1.5rem;
+  background-color: #0073e6;
   color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.resume-button:hover {
+  background-color: #005bb5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* About Section */
+.about-section {
+  padding: 2rem 2rem;
+  background-color: inherit;
+  max-width: 1400px;
+  margin: auto;
+  text-align: center;
 }
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #0073e6;
+  display: inline-block;
+}
+
+.about-section p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+ 
+  text-align: justify;
+  color: inherit;
+}
+
+
+/* education section */
+.education-container {
+  margin-top: 2rem;
+  margin: 90px auto;  
+  background-color: var(--section-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  
+}
+
+.education-container h3 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: var(--primary-text);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+}
+
+.education-container ul {
+  list-style-type: none;
+  padding-left: 0;
+  
+}
+
+.education-container li {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  color: var(--secondary-text);
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.education-container strong {
+  font-weight: bold;
+  color: var(--highlight);
+  font-size: large;
+}
+
+.education-container ul {
+  padding-left: 0;
+  font-size: larger;
+}
+
+.education-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.education-content {
+  color: var(--secondary-text);
+}
+
+.education-year {
+  font-weight: bold;
+  color: var(--accent);
+  font-size: 0.95rem;
+  white-space: nowrap;
+  margin-left: 1rem;
+  font-size: 16px;
+  
+}
+
+/* skill section */
+.skills-section {
+  
+
+  padding: 2rem 2rem;
+  background-color: var(--section-bg);
+  
+  margin: auto;
+  text-align: center;
+  
+}
+.skills-section h2{
+ font-size: 2rem;
+  margin-bottom: 4rem;
+  border-bottom: 2px solid #0073e6;
+  display: inline-block;
+}
+
+.skill-badge {
+ 
+  display: inline-block;
+  padding: 20px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  color:inherit;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(11, 9, 9, 0.383);
+  font-size: 20px;
+  transition: transform 0.5s ease;
+  
+
+}
+
+.skill-badge:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* project section */
+.projects-section {
+  padding: 50px 20px;
+  background-color:#ffffff;
+  color: #fff;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10rem;
+  border-bottom: 2px solid #0073e6;
+  display: inline-block;
+  color: rgb(0, 0, 0);
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 100px;
+  margin-left: 130px;
+  
+  
+}
+
+.project-card {
+  
+  background-color: #ffffff;
+  padding: 20px 20px;
+  border-radius: 10px;
+  border-left: 3px solid #2979ff;
+  border-top: 3px solid #2979ff;
+  box-shadow: 0 2px 6px rgba(140, 137, 137, 0.674);
+  transition: transform 0.2s ease;
+  width:350px;
+  height:450px;
+  
+  display: flex;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+/* .project-image {
+  background-color: #6f2020;
+  height: 150px;
+} */
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  font-size: 30px;
+  margin-top: auto;
+  margin-bottom: 10px;
+  color: black;
+  text-align: left;
+}
+
+.project-content p {
+  font-size: 18px;
+  color: #444;
+  text-align: left;
+  
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech-stack span {
+
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color:black;
+  box-shadow: 0 4px 8px rgba(11, 9, 9, 0.197);
+  font-size: 14px;
+  transition: transform 0.5s ease;
+  margin-bottom: 5px;
+  
+}
+
+.github-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  
+  
+}
+
+.github-btn:hover {
+  background-color: #1565c0;
+}
+
+
+/* contact section */
+.contact-container {
+  width: 100%;
+  background-color: var(--section-bg);
+  margin: 50px auto;
+  border-radius: 10px;
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.contact-container h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #000000;
+}
+
+
+.contact-box {
+  padding: 8px;
+}
+
+.contact-text {
+  font-size: 21px;
+  margin-bottom: 50px;
+  color: #444;
+}
+
+.contact-details p {
+  font-size: 20px;
+  margin: 15px 0;
+  color: #444;
+}
+
+.contact-details i {
+  color: #007bff;
+  margin-right: 8px;
+}
+
+.social-title {
+  margin-top: 25px;
+  font-weight: 500;
+  font-size: 23px;
+  color: #444;
+}
+
+.social-links a {
+  margin: 0 15px;
+  font-size: 30px;
+  
+  text-decoration: none;
+}
+
+.github i {
+  color: #333; /* GitHub dark gray */
+}
+.linkedin i {
+  color: #0077b5; /* LinkedIn blue */
+}
+.instagram i {
+  color: #e4405f; /* Instagram pink */
+}
+.code i {
+  color: #28a745; /* Green for code */
+}
+
+
+
+
+html {
+  scroll-padding-top: 80px; /* adjust based on your header height */
+}
+
+:root {
+  --section-bg: #f9f9f9;
+  --card-bg: #ffffff;
+  --primary-text: #222;
+  --secondary-text: #444;
+  --accent: #007bff; /* or any theme color */
+  --highlight: #000; /* bold text color */
+}
+
