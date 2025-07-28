@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 import { BsSun, BsMoon } from "react-icons/bs";
 import "./App.css";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
  
 
   useEffect(() => {
@@ -17,13 +19,20 @@ function App() {
     <div className="app">
       <header className="header">
         <nav className="navbar">
-          <ul className="nav-links">
+
+              {/* Hamburger toggle  */}
+    <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>&#9776;</button>
+
+                {/* Navigation Links */}
+          <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+
+          {/* social icons */}
           <div className="icons">
             <a href="https://github.com/Fenaz18" target="_blank" rel="noreferrer">
               <FaGithub />
@@ -41,7 +50,7 @@ function App() {
       <main className="main-content" >
         <section id="home" className="intro-section" >
           <div className="intro-container">
-            <img src="\yourphoto.png" alt="Your Photo" className="center-photo" />
+<img src={`${process.env.PUBLIC_URL}/yourphoto.png`} alt="Your Photo" className="center-photo" />
             <div className="intro-text">
               <h1 className="intro-heading">Hi, I am Fenaz</h1>
               <p className="plain-role">Full Stack Web Developer</p>
