@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { BsSun, BsMoon } from "react-icons/bs";
@@ -7,24 +7,49 @@ import "./App.css";
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null); // ref for hamburger button
+
  
 
   useEffect(() => {
     document.body.className = darkMode ? "dark" : "light";
   }, [darkMode]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
  
 
   return (
     <div className="app">
       <header className="header">
-        <nav className="navbar">
+        <nav className="navbar" >
 
               {/* Hamburger toggle  */}
-    <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>&#9776;</button>
+    <button 
+    ref={buttonRef}
+      className="hamburger"
+     id="hamburger-btn"
+     onClick={() => setMenuOpen((prev)=> !prev)}>&#9776;</button>
 
                 {/* Navigation Links */}
-          <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
+          <ul 
+          ref={menuRef}
+          className={`nav-links ${menuOpen ? "show" : ""}`}>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -241,24 +266,24 @@ Built a rice pest detector using ResNet18 & YOLOv8 (97% accuracy).<br/>Deployed 
   </div>
 </section>
 
-<section class="contact-container" id="contact">
+<section className="contact-container" id="contact">
   <h2>Contact Me</h2>
   
 
-  <div class="contact-box">
-    <p class="contact-text">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+  <div className="contact-box">
+    <p className="contact-text">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
 
-    <div class="contact-details">
-      <p><i class="fas fa-envelope"></i> fenazshereen@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +91 8197343857</p>
-      <p><i class="fas fa-map-marker-alt"></i> Mandya, Karnataka, India</p>
+    <div className="contact-details">
+      <p><i className="fas fa-envelope"></i> fenazshereen@gmail.com</p>
+      <p><i className="fas fa-phone"></i> +91 8197343857</p>
+      <p><i className="fas fa-map-marker-alt"></i> Mandya, Karnataka, India</p>
     </div>
 
-    <p class="social-title">Find me on social media:</p>
-    <div class="social-links">
-      <a href="https://github.com/Fenaz18" class="github"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/fenaz-833455267/" class="linkedin"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.instagram.com/finaz6373/" class="instagram"><i class="fab fa-instagram"></i></a>
+    <p className="social-title">Find me on social media:</p>
+    <div className="social-links">
+      <a href="https://github.com/Fenaz18" className="github"><i className="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/fenaz-833455267/" className="linkedin"><i className="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/finaz6373/" className="instagram"><i className="fab fa-instagram"></i></a>
       {/* <a href="https://leetcode.com/u/Fenaz_Fin/" class="code"><i class="fas fa-code"></i></a> */}
     </div>
   </div>
