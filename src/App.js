@@ -59,11 +59,13 @@ function App() {
 
           {/* social icons */}
           <div className="icons">
-            <a href="https://github.com/Fenaz18" target="_blank" rel="noreferrer">
+            <a href="https://github.com/Fenaz18" target="_blank" rel="noreferrer" >
+            
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/fenaz-833455267/" target="_blank" rel="noreferrer">
-              <FaLinkedin />
+            {/* <a href="https://www.linkedin.com/in/fenaz-833455267/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i> */}
+            <a href="https://www.linkedin.com/in/fenaz-833455267/" target="_blank" rel="noreferrer" className="linkedin"><i className="fab fa-linkedin"></i>
+              {/* <FaLinkedin /> */}
             </a>
             {/* <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
               {darkMode ? <BsSun /> : <BsMoon />}

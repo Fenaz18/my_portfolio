@@ -637,9 +637,9 @@ body.dark {
 
   display: none;
   position: absolute;
-  top: 20px;
+ 
   right: 20px;
-  font-size: 2rem;
+  font-size: 1.7rem;
   background: none;
   border: none;
   color: inherit;
