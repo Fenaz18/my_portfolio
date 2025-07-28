@@ -52,13 +52,14 @@ body.dark {
 
 .icons {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
 .icons a,
 .icons button {
   color: inherit;
+  
   font-size: 2rem;
   background: none;
   border: none;
@@ -637,7 +638,7 @@ body.dark {
 
   display: none;
   position: absolute;
- 
+  top:3px;
   right: 20px;
   font-size: 1.7rem;
   background: none;

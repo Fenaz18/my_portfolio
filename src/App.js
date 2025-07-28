@@ -63,9 +63,9 @@ function App() {
             
               <FaGithub />
             </a>
-            {/* <a href="https://www.linkedin.com/in/fenaz-833455267/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i> */}
-            <a href="https://www.linkedin.com/in/fenaz-833455267/" target="_blank" rel="noreferrer" className="linkedin"><i className="fab fa-linkedin"></i>
-              {/* <FaLinkedin /> */}
+            <a href="https://www.linkedin.com/in/fenaz-833455267/" target="_blank" rel="noreferrer">
+            {/* <a href="https://www.linkedin.com/in/fenaz-833455267/" target="_blank" rel="noreferrer" className="linkedin"><i className="fab fa-linkedin"></i> */}
+              <FaLinkedin />
             </a>
             {/* <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
               {darkMode ? <BsSun /> : <BsMoon />}
