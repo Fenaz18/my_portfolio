@@ -313,7 +313,7 @@ body.dark {
   border-top: 3px solid #2979ff;
   box-shadow: 0 2px 6px rgba(140, 137, 137, 0.674);
   transition: transform 0.2s ease;
-  width:360px;
+  width:340px;
   height:460px;
   display: flex;
 }
