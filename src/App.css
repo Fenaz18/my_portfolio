@@ -582,10 +582,19 @@ body.dark {
   .nav-links {
     font-size: 1rem;
     display: none;
+    width: 70px;
   }
 
   .nav-links.show {
   display: block;
+  
+  }
+
+  .nav-links a {
+    
+    display: block;
+    text-align: left;
+    padding:3px;
   }
 
   .intro-heading {
@@ -668,7 +677,7 @@ body.dark {
   top: 70px; /* Adjust based on your header height */
   right: 1rem;
   background-color: var(--section-bg);
-  width: 200px;
+  width: 90px;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -694,6 +703,8 @@ body.dark {
   .nav-links a {
     
     display: block;
+    text-align: left;
+    padding:3px;
   }
 }
 

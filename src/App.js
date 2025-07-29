@@ -107,7 +107,7 @@ function App() {
       <div className="education-content">
         <strong>Bachelor of Engineering (Computer Science)</strong><br />
         PES College of Engineering, Mandya<br />
-        CGPA: 8.37
+        CGPA: 8.41
       </div>
       <div className="education-year">2022 – 2026</div>
     </li>
