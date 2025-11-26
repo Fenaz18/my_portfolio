@@ -81,7 +81,8 @@ function App() {
             <div className="intro-text">
               <h1 className="intro-heading">Hi, I am Fenaz</h1>
               <p className="plain-role">Full Stack Web Developer</p>
-              <a href="/resume.pdf" className="resume-button" download>Download Resume</a>
+              <a href={`${process.env.PUBLIC_URL}/resume.pdf`}
+ className="resume-button" download>Download Resume</a>
             </div>
           </div>
         </section>
